@@ -24,7 +24,7 @@ async function run() {
                 title VARCHAR(256) NOT NULL,
                 author VARCHAR(256) NOT NULL,
                 pages INTEGER NOT NULL,
-                isHardback BOOLEAN NOT NULL,
+                is_hardback BOOLEAN NOT NULL,
                 genre VARCHAR(20) NOT NULL,
                 img VARCHAR(256) NOT NULL,
             );
