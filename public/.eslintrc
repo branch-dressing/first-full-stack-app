@@ -1,4 +1,9 @@
 {
+  "liveServer.settings.proxy": {
+  "enable": true,
+  "baseUri": "/api",
+  "proxyUri": "http://localhost:3000/api"
+},
   "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": 8,
