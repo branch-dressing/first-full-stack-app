@@ -6,9 +6,9 @@ class Header extends Component {
         <div>
             <h1>BOOKS!</h1>
             <ul>
-                <li>Home</li>
-                <li>Book Table</li>
-                <li>About</li>
+                <a href="./index.html">Home</a>
+                <a href="./book-index.html">Book List</a>
+                <a href=".">Add Book - (not active)</a>
             </ul>
         <div>
         `
