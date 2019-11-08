@@ -26,7 +26,7 @@ async function run() {
                 pages INTEGER NOT NULL,
                 is_hardback BOOLEAN NOT NULL,
                 genre VARCHAR(20) NOT NULL,
-                img VARCHAR(256) NOT NULL,
+                img VARCHAR(256) NOT NULL
             );
         `);
 
