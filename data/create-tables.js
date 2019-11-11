@@ -20,8 +20,7 @@ async function run() {
         // run a query to create tables
         await client.query(`
             CREATE TABLE genres (
-                id SERIAL PRIMARY KEY NOT NU
-                LL,
+                id SERIAL PRIMARY KEY NOT NULL,
                 genre VARCHAR(256) NOT NULL
             );
 

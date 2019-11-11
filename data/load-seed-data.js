@@ -31,11 +31,12 @@ async function run() {
                 const genre = savedGenres.find(genre => {
                     return genre.genre === book.genre;
                 });
+                console.log('AAAAAAA!!!!!:    ' + genre)
                 const genreId = genre.id;
                 // Use a "parameterized query" to insert the data,
                 // Don't forget to "return" the client.query promise!
                 return client.query(`
-                INSERT INTO books (title, author, pages, is_hardback, genre, img)
+                INSERT INTO books (title, author, pages, is_hardback, genre_id, img)
                 VALUES ($1, $2, $3, $4, $5, $6);
                 `,
                 [book.title, book.author, book.pages, book.is_hardback, genreId, book.img]);
