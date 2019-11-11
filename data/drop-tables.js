@@ -12,6 +12,7 @@ async function run() {
     
         await client.query(`
             DROP TABLE IF EXISTS books;
+            DROP TABLE IF EXISTS genres;
         `);
 
         console.log('drop tables complete');
