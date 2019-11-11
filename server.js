@@ -67,7 +67,7 @@ app.get('/api/genres', async (req, res) => {
     }
 });
 
-app.post('api/books', async (req, res) => {
+app.post('/api/books', async (req, res) => {
     const book = req.body;
 
     try {
