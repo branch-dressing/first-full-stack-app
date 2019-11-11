@@ -28,22 +28,16 @@ app.use(express.static('public'));
 app.get('/api/books', async (req, res) => {
 
     try {
+        console.log('getting boooks')
         const result = await client.query(`
-            SELECT
-                id,
-                title,
-                author,
-                pages,
-                is_hardback,
-                genre,
-                img
-            FROM BOOKS;
+            SELECT * FROM books;
         `);
+        console.log(result);
 
         res.json(result.rows);
     }
     catch(err) {
-        res.result(500).json({
+        res.status(500).json({
             error: err.message || err
         });
     }
