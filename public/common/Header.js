@@ -8,7 +8,7 @@ class Header extends Component {
             <ul>
                 <a href="./index.html">Home</a>
                 <a href="./book-index.html">Book List</a>
-                <a href=".">Add Book - (not active)</a>
+                <a href="./book-form.html">Add Book - (not active)</a>
             </ul>
         <div>
         `

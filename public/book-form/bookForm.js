@@ -28,6 +28,7 @@ class BookForm extends Componet {
     }
 
     renderHTML() {
+        console.log('bookForm.js')
         const genres = this.props.genres;
         const optionsList = genres.map(genre => {
             return `<option value="${genre.id}">${genre.genre}</option>`;
@@ -77,3 +78,5 @@ class BookForm extends Componet {
         `;
     }
 }
+
+export default BookForm;

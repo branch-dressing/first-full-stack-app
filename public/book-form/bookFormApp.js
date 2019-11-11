@@ -4,18 +4,19 @@ import BookForm from './bookForm.js';
 import { getGenres } from '../services/book-api.js'
 
 class BookFormApp extends Component {
-    onRedner(el) {
+    async onRedner(el) {
         const header = new Header({ title: 'Add a Book' });
         el.prepend(header.renderDOM());
 
         const main = el.querySelector('main');
         
-        //const genres = await getGenres();
-        const bookForm = new BookForm({ genres });
+        const genres = await getGenres();
+        const bookForm = new BookForm({ });
         main.appendChild(bookForm.renderDOM());
     }
 
     renderHTML() {
+        console.log('bookFormApp.js')
         return /*html*/`
             <div>
                 <main></main>
