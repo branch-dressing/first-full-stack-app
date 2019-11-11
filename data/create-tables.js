@@ -19,13 +19,19 @@ async function run() {
     
         // run a query to create tables
         await client.query(`
+            CREATE TABLE genres (
+                id SERIAL PRIMARY KEY NOT NU
+                LL,
+                genre VARCHAR(256) NOT NULL
+            );
+
             CREATE TABLE books (
                 id SERIAL PRIMARY KEY NOT NULL,
                 title VARCHAR(256) NOT NULL,
                 author VARCHAR(256) NOT NULL,
                 pages INTEGER NOT NULL,
                 is_hardback BOOLEAN NOT NULL,
-                genre VARCHAR(20) NOT NULL,
+                genre_id INTEGER NOT NULL REFERENCES genres(id),
                 img VARCHAR(256) NOT NULL
             );
         `);
