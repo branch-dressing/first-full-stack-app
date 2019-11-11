@@ -49,11 +49,45 @@ app.get('/api/books', async (req, res) => {
     }
 });
 
-// http method and path...
+app.get('/api/genres', async (req, res) => {
+    try {
+        const result = await client.query(`
+        SELECT *
+        FROM genres
+        ORDER BY genre
+        `);
 
+        res.json(result.rows);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
 
-// Start the server
-// (use PORT from .env!)
+app.post('api/books', async (req, res) => {
+    const book = req.body;
+
+    try {
+        const result = await client.query(`
+            INSERT INTO books (title, author, pages, is_hardback, genre_id, img)
+            VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING *;
+        `,
+            [book.title, book.author, book.pages, book.is_hardback, book.genre_id, book.img]
+        );
+
+        res.json(result.rows[0]);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
 
 app.listen(PORT, () => {
     console.log('server running on PORT', PORT);
